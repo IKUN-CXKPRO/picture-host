@@ -5,33 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>文件索引</title>
   <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f172a;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
-      color: #333;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--bg), #1e293b);
+      color: var(--text);
+      padding: 24px;
     }
+
+    .card {
+      width: min(640px, 100%);
+      background: rgba(17, 24, 39, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      padding: 24px 28px;
+    }
+
     h1 {
-      margin-bottom: 16px;
+      margin: 0 0 12px;
+      font-size: 24px;
     }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
     ul {
       padding-left: 20px;
+      margin: 0;
     }
+
     li {
-      margin: 8px 0;
+      margin: 10px 0;
     }
+
     a {
-      color: #0366d6;
+      color: var(--accent);
       text-decoration: none;
+      transition: color 0.2s ease;
     }
+
     a:hover {
+      color: var(--accent-hover);
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>文件索引</h1>
-  <ul>
-    <li><a href="emoji1.jpg">emoji1.jpg</a></li>
-  </ul>
+  <div class="card">
+    <h1>文件索引</h1>
+    <p>当前目录中的可访问文件：</p>
+    <ul>
+      <li><a href="emoji1.jpg">emoji1.jpg</a></li>
+    </ul>
+  </div>
 </body>
 </html>
